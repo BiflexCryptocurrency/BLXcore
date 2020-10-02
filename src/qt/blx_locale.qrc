@@ -1,0 +1,30 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/blx_bg.qm</file>
+        <file alias="ca">locale/blx_ca.qm</file>
+        <file alias="cs">locale/blx_cs.qm</file>
+        <file alias="da">locale/blx_da.qm</file>
+        <file alias="de">locale/blx_de.qm</file>
+        <file alias="en">locale/blx_en.qm</file>
+        <file alias="en_US">locale/blx_en_US.qm</file>
+        <file alias="es">locale/blx_es.qm</file>
+        <file alias="fi">locale/blx_fi.qm</file>
+        <file alias="fr_FR">locale/blx_fr_FR.qm</file>
+        <file alias="hr">locale/blx_hr.qm</file>
+        <file alias="it">locale/blx_it.qm</file>
+        <file alias="ja">locale/blx_ja.qm</file>
+        <file alias="ko_KR">locale/blx_ko_KR.qm</file>
+        <file alias="nl">locale/blx_nl.qm</file>
+        <file alias="pl">locale/blx_pl.qm</file>
+        <file alias="pt">locale/blx_pt.qm</file>
+        <file alias="pt_BR">locale/blx_pt_BR.qm</file>
+        <file alias="ro_RO">locale/blx_ro_RO.qm</file>
+        <file alias="ru">locale/blx_ru.qm</file>
+        <file alias="sk">locale/blx_sk.qm</file>
+        <file alias="sv">locale/blx_sv.qm</file>
+        <file alias="tr">locale/blx_tr.qm</file>
+        <file alias="uk">locale/blx_uk.qm</file>
+        <file alias="zh_CN">locale/blx_zh_CN.qm</file>
+        <file alias="zh_TW">locale/blx_zh_TW.qm</file>
+    </qresource>
+</RCC>

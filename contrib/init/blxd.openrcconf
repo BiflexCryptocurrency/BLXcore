@@ -1,0 +1,26 @@
+# /etc/conf.d/blxd: config file for /etc/init.d/blxd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/blx/blx.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/blxd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/blxd.pid"
+
+# Where to write blxd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/blxd"
+
+# User and group to own blxd process
+#BITCOIND_USER="blx"
+#BITCOIND_GROUP="blx"
+
+# Path to blxd executable
+#BITCOIND_BIN="/usr/bin/blxd"
+
+# Nice value to run blxd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

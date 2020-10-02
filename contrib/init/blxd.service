@@ -1,0 +1,26 @@
+[Unit]
+Description=BLX's distributed currency daemon
+After=network.target
+
+[Service]
+User=blx
+Group=blx
+
+Type=forking
+PIDFile=/var/lib/blxd/blxd.pid
+
+ExecStart=/usr/bin/blxd -daemon -pid=/var/lib/blxd/blxd.pid \
+          -conf=/etc/blx/blx.conf -datadir=/var/lib/blxd
+
+ExecStop=-/usr/bin/blx-cli -conf=/etc/blx/blx.conf \
+         -datadir=/var/lib/blxd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
