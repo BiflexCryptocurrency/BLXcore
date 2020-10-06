@@ -49,11 +49,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    ( 0, uint256("0x00000e5501d8b3f4476c7929f4fd9fbc24ced82a84428188b5f5a1b6119a182f"));
+    ( 0, uint256("0x00000c1531ceca4b100d34b6667dbeafb436f4937d1ac324739527169b6b804a"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1597108298,   // UNIX timestamp of last checkpoint block
+    1602000986,   // UNIX timestamp of last checkpoint block
     92076,                  // total number of transactions between genesis and last checkpoint
                          // (the tx=... number in the SetBestChain debug.log lines)
     1500              // estimated number of transactions per day after checkpoint
@@ -63,7 +63,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1601394597,
+    1602000986,
     0,
     250};
 
@@ -71,7 +71,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1601394597,
+    1602000986,
     0,
     100};
 
@@ -123,7 +123,7 @@ public:
         nBlockLastGoodCheckpoint = ~1; //Last valid accumulator checkpoint
 
         /** Genesis **/
-        const char* pszTimestamp = "BLX started in September 2020.";
+        const char* pszTimestamp = "BLX started in October 06 2020.";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -134,16 +134,18 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1601394597;
+        genesis.nTime = 1602000986;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1716273;
+        genesis.nNonce = 395445;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000e5501d8b3f4476c7929f4fd9fbc24ced82a84428188b5f5a1b6119a182f"));
-        assert(genesis.hashMerkleRoot == uint256("0x1f661f447b376fbea6f2a85aacd9723bf1f4a2845ab8a0924371f0bad4bf7f11"));
+        assert(hashGenesisBlock == uint256("0x00000c1531ceca4b100d34b6667dbeafb436f4937d1ac324739527169b6b804a"));
+        assert(genesis.hashMerkleRoot == uint256("0xe874a730a90dee2ae0275ccc616b969d4b5a077384b198f4eaae34727348aeb8"));
         
         
-         vSeeds.push_back(CDNSSeedData("5.189.191.83", "5.189.191.83"));
+        
+        vSeeds.push_back(CDNSSeedData("161.97.101.235", "161.97.101.235"));
+        vSeeds.push_back(CDNSSeedData("95.111.245.1", "95.111.245.1"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 25); // B
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 133); // v
@@ -166,8 +168,8 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "049cf9f402749cff0d3ed661d5160157321926d4d1bd892efc07ef9a057d9bc5ee101123bf561ffb96c78a7b6fd8afc010254d8fb451c752b1fe1171aa3dc7e7ee";
-        strObfuscationPoolDummyAddress = "TPgV1vw2rMmKpvBbnUyfvfFYs2rTjJiDrj";
-        nStartMasternodePayments = 1601394597;
+        strObfuscationPoolDummyAddress = "BMzxXPihv5KkGiNofuot9qR929DARRe1AD";
+        nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis creation
 
         /** Zerocoin */
         zerocoinModulus = "0xc95577b6dce0049b0a20c779af38079355abadde1a1d80c353f6cb697a7ae5a087bad39caa5798478551d0f9d91e6267716506f32412de1d19d17588765eb9502b85c6a18abdb05791cfd8b734e960281193705eeece210920cc922b3af3ceb178bf12c22eb565d5767fbf19545639be8953c2c38ffad41f3371e4aac750ac2d7bd614b3faabb453081d5d88fdbb803657a980bc93707e4b14233a2358c97763bf28f7c933206071477e8b371f229bc9ce7d6ef0ed7163aa5dfe13bc15f7816348b328fa2c1e69d5c88f7b94cee7829d56d1842d77d7bb8692e9fc7b7db059836500de8d57eb43c345feb58671503b932829112941367996b03871300f25efb5";
